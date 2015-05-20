@@ -16,7 +16,9 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    '720kb.socialshare'
+    '720kb.socialshare',
+    'djds4rce.angular-socialshare',
+    'ngSocial'
   ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
@@ -31,6 +33,14 @@ angular
       .when('/720kb', {
         templateUrl: 'views/720kb.html',
         controller: '720kbCtrl'
+      })
+      .when('/socialshare', {
+        templateUrl: 'views/socialshare.html',
+        controller: 'SocialshareCtrl'
+      })
+      .when('/ngsocial', {
+        templateUrl: 'views/ngsocial.html',
+        controller: 'NgsocialCtrl'
       })
       .otherwise({
         redirectTo: '/'
