@@ -15,9 +15,10 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    '720kb.socialshare'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -27,7 +28,13 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/720kb', {
+        templateUrl: 'views/720kb.html',
+        controller: '720kbCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
+
+      $locationProvider.html5Mode(true);
   });
